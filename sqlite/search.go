@@ -3,12 +3,14 @@ package main
 import (
 	"fmt"
 	"log"
-	"crawshaw.io/sqlite"
+	//"crawshaw.io/sqlite"
+	"database/sql"
+	"github.com/mattn/go-sqlite3"
 )
 
 func main() {
 	
-	db, err := sqlite.OpenConn("sqlite3", "../data/shakespeare.db")
+	db, err := sql.Open("sqlite3", "../data/shakespeare.db")
 	if err != nil {
 		log.Fatal(err)
 	}
